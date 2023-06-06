@@ -69,7 +69,7 @@ window.toggle = async (checked) => {
             const { scores } = result;
             const labels = transferRecognizer.wordLabels();
             const index = scores.indexOf(Math.max(...scores));
-            alert(labels[index]);
+            document.querySelector('#result').innerHTML = labels[index];
         }, {
             overlapFactor: 0, // 识别频率 0 - 1
             probabilityThreshold: 0.75 // 可能性阈值
