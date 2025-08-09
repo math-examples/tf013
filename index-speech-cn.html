@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>TensorFlow.js Speech Commands Model Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="app.js"></script>
+</head>
+
+<body>
+      <button class="button" id='downloadAndLoadFiles'  onclick="downloadAndLoadFiles()"> download (3M)</button>
+   <script>
+
+const jsUrls = ['./tfjs', 'tfjs-vis', './speech-commands.js'];
+    const mjsUrls = ['./script.js'];
+
+const cssUrls = ['./math-examples.css'];
+
+function downloadAndLoadFiles(){
+    document.querySelector('#downloadAndLoadFiles').disabled = true;
+
+    loadFiles(jsUrls, '.js', 0);
+    loadFiles(mjsUrls, '.js', 'module');
+   loadFiles(cssUrls, '.css', 0);
+}
+
+  </script>
+  
+  <button class="button" id='loadModel' disabled>waiting</button>
+
+<button class="button" onclick="collect(this)">上一张</button>
+<button class="button" onclick="collect(this)">下一张</button>
+<button class="button" onclick="collect(this)">背景噪音</button>
+<button class="button" onclick="save()">保存</button>
+<pre id="count"></pre>
+<button class="button" onclick="train()">训练</button>
+ <button class="button" id='result' disabled>结果</button>
+<br><br>
+监听开关：<input type="checkbox" onchange="toggle(this.checked)">
+
+</body>
+
+</html>
+
